@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1W1 - Flexbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*Propriétés du conteneur principal: la bibliothèque*/
+        #conteneur {
+            background-color: #501515;
+            width: 400px;
+            height: 700px;
+            margin: 100px auto;
+        }
+
+        /*Propriétés des étagères - conteneurs flex*/
+        #conteneur .etagere {
+            background-color: #501515;
+            border: 8px solid #802020;
+            width: 384px;
+            height: 100px;
+            display: flex;
+            /*Propriétés de base de la majorité des conteneurs flex*/
+
+        }
+
+        /*Propriétés des livres*/
+        .livre {
+            background-color: #fce171;
+            color: #501515;
+            text-align: center;
+            font: bold 14px Arial;
+            border: 2px solid #818106;
+        }
+
+        .vertical {
+            width: 5%;
+            height: 75%;
+            flex-direction: row;
+            justify-content: center;
+            justify-self: flex-start;
+            align-self: flex-end;
+        }
+
+        .horizontal {
+            width: 40%;
+            height: 15%;
+            text-align: left;
+            padding-left: 1%;
+        }
+
+        #conteneur .etagere:nth-of-type(2){
+            flex-direction: row-reverse;
+        }
+
+        #conteneur .etagere:nth-of-type(2) .vertical:nth-child(even){
+            flex-grow: 1;
+        }
+
+        #conteneur .etagere:nth-of-type(3){
+            justify-content: center;
+        }
+
+        #conteneur .etagere:nth-of-type(3) .vertical:nth-child(5){
+            order: 9;
+        }
+
+        #conteneur .etagere:nth-of-type(4){
+            justify-content:space-around;
+        }
+
+        #conteneur .etagere:nth-of-type(4) .vertical:nth-child(even){
+            order: 1;
+        }
+
+        #conteneur .etagere:nth-of-type(5){
+            justify-content:space-between;
+        }
+
+        #conteneur .etagere:nth-of-type(6) .horizontal{
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+
+        /*Variantes selon les étagères*/
+
+    </style>
+</head>
+
+<body>
+    <div id="conteneur">
+        <div class="etagere">
+            <div class="livre vertical">1</div>
+            <div class="livre vertical">2</div>
+            <div class="livre vertical">3</div>
+            <div class="livre vertical">4</div>
+            <div class="livre vertical">5</div>
+            <div class="livre vertical">6</div>
+            <div class="livre vertical">7</div>
+            <div class="livre vertical">8</div>
+            <div class="livre vertical">9</div>
+        </div>
+        <div class="etagere">
+            <div class="livre vertical">1</div>
+            <div class="livre vertical">2</div>
+            <div class="livre vertical">3</div>
+            <div class="livre vertical">4</div>
+            <div class="livre vertical">5</div>
+            <div class="livre vertical">6</div>
+            <div class="livre vertical">7</div>
+            <div class="livre vertical">8</div>
+            <div class="livre vertical">9</div>
+            <div class="livre vertical">10</div>
+            <div class="livre vertical">11</div>
+            <div class="livre vertical">12</div>
+            <div class="livre vertical">13</div>
+            <div class="livre vertical">14</div>
+        </div>
+        <div class="etagere">
+            <div class="livre vertical">1</div>
+            <div class="livre vertical">2</div>
+            <div class="livre vertical">3</div>
+            <div class="livre vertical">4</div>
+            <div class="livre vertical">5</div>
+            <div class="livre vertical">6</div>
+            <div class="livre vertical">7</div>
+            <div class="livre vertical">8</div>
+            <div class="livre vertical">9</div>
+        </div>
+        <div class="etagere">
+            <div class="livre vertical">1</div>
+            <div class="livre vertical">2</div>
+            <div class="livre vertical">3</div>
+            <div class="livre vertical">4</div>
+            <div class="livre vertical">5</div>
+            <div class="livre vertical">6</div>
+        </div>
+        <div class="etagere">
+            <div class="livre vertical">1</div>
+            <div class="livre vertical">2</div>
+            <div class="livre vertical">3</div>
+            <div class="livre vertical">4</div>
+            <div class="livre vertical">5</div>
+            <div class="livre vertical">6</div>
+        </div>
+        <div class="etagere">
+            <div class="livre horizontal">1</div>
+            <div class="livre horizontal">2</div>
+            <div class="livre horizontal">3</div>
+            <div class="livre horizontal">4</div>
+            <div class="livre horizontal">5</div>
+            <div class="livre horizontal">6</div>
+            <div class="livre horizontal">7</div>
+            <div class="livre horizontal">8</div>
+        </div>
+    </div>
+</body>
+
+</html>
